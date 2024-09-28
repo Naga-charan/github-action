@@ -41,7 +41,6 @@ jobs:
           docker build -t $ECR_REGISTRY/view:github.sha -f Dockerfile.yml .
           docker push $ECR_REGISTRY/view:github.sha
           echo "image=$ECR_REGISTRY/view:github.sha" >> $GITHUB_OUTPUT
-
 - name: Create ECS Cluster
         run: |
           aws ecs create-cluster --cluster-name nginx-cluster
